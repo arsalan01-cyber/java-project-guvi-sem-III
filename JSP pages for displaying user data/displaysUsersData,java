@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+    
+    <!-- Check if the 'user' attribute is set in the request -->
+    <c:if test="${not empty user}">
+        <p><strong>Username:</strong> ${user.username}</p>
+        <p><strong>Email:</strong> ${user.email}</p>
+        <!-- Add more user data if needed -->
+    </c:if>
+
+    <!-- Link to start quiz -->
+    <br>
+    <a href="quiz.jsp">Start Quiz</a><br>
+    <a href="logout">Logout</a>
+</body>
+</html>
