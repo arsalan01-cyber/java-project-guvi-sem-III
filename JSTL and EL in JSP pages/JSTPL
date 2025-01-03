@@ -1,0 +1,26 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h2>User Profile</h2>
+
+    <!-- Using EL to access user object -->
+    <c:if test="${not empty user}">
+        <p><strong>Username:</strong> ${user.username}</p>
+        <p><strong>Email:</strong> ${user.email}</p>
+    </c:if>
+
+    <!-- Using JSTL to iterate over a list of items (just an example) -->
+    <h3>Recent Activities:</h3>
+    <c:forEach var="activity" items="${user.activities}">
+        <p>${activity}</p>
+    </c:forEach>
+    
+    <br>
+    <a href="logout.jsp">Logout</a>
+</body>
+</html>
